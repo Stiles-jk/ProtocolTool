@@ -7,7 +7,8 @@ import com.zstu.exception.ParsedException;
 import org.jdom.Element;
 
 /**
- * 对网络协议中一个描述字段的抽象；例如同步头字段，数据字段等。Block的长度的单位为byte；如果某一字段表述时使用bit，则需要对其进行bit分割
+ * 对网络协议中一个描述字段的抽象；例如同步头字段，数据字段等。
+ * Block的长度的单位为byte；如果某一字段表述时使用bit，则需要对其进行bit分割
  *
  * @author jky
  */

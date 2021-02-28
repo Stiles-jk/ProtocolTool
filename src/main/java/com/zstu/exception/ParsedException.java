@@ -12,6 +12,8 @@ import java.io.PrintStream;
  */
 public class ParsedException extends Exception {
 
+    private static final long serialVersionUID = 20210218L;
+
     public ParsedException(String msg) {
         super(msg);
     }

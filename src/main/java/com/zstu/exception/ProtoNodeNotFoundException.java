@@ -7,6 +7,7 @@ package com.zstu.exception;
  * @date 2021/2/24-20:42
  */
 public class ProtoNodeNotFoundException extends Exception {
+    private static final long serialVersionUID = 20212417L;
 
     public ProtoNodeNotFoundException(String message) {
         super(message);
