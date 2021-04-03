@@ -1,6 +1,9 @@
 package com.zstu.utils;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.Charset;
 
 /**
  * 该类用来接收一个byte-array，并将其转为基本数据类型
@@ -26,10 +29,17 @@ public abstract class BytesToPrimaryType {
             throw new UnsupportedOperationException("byte-array is to long");
         }
         byte[] adjustBytes = {0, 0, 0, 0};
-
-        for (int i = 0; i < bytes.length; i++) {
-            adjustBytes[i] = bytes[i];
+        if ("little".equals(endian)) {
+            for (int i = 0; i < bytes.length; i++) {
+                adjustBytes[i] = bytes[i];
+            }
+        } else {
+            int index = 3;
+            for (int i = bytes.length - 1; i >= 0; i--) {
+                adjustBytes[index--] = bytes[i];
+            }
         }
+
 
         int value = 0;
         //按照大小端模式进行解析
@@ -57,10 +67,17 @@ public abstract class BytesToPrimaryType {
             throw new UnsupportedOperationException("byte-array is to long");
         }
         byte[] adjustBytes = {0, 0, 0, 0, 0, 0, 0, 0};
-
-        for (int i = 0; i < bytes.length; i++) {
-            adjustBytes[i] = bytes[i];
+        if ("little".equals(endian)) {
+            for (int i = 0; i < bytes.length; i++) {
+                adjustBytes[i] = bytes[i];
+            }
+        } else {
+            int index = 7;
+            for (int i = bytes.length - 1; i >= 0; i--) {
+                adjustBytes[index--] = bytes[i];
+            }
         }
+
 
         long value = 0;
         if ("little".equals(endian)) {
@@ -155,12 +172,21 @@ public abstract class BytesToPrimaryType {
                 s |= (bytes[i] & 0xff);
             }
         } else if ("little".equals(endian)) {
-            for (int i = 2; i > 0; i--) {
+            for (int i = 1; i >= 0; i--) {
                 s <<= 8;
                 s |= (bytes[i] & 0xff);
             }
         }
         return s;
+    }
+
+    public static char toChar(byte b, String charSet) {
+        Charset cs = Charset.forName(charSet);
+        ByteBuffer bb = ByteBuffer.allocate(1);
+        bb.put(b);
+        bb.flip();
+        CharBuffer cb = cs.decode(bb);
+        return cb.get();
     }
 
     /**

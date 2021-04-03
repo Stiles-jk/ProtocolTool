@@ -1,5 +1,6 @@
 package com.zstu.structure.pojo;
 
+import java.time.temporal.ValueRange;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,35 +37,45 @@ public class Frame {
 
     public void parse(byte[] recvBytes, List<ParsedVar> parsedVars) throws ParsedException {
         byte[] data = ByteArrayUtils.copySubArray(recvBytes, flag.length, -1);
+        byte[] allFrameData = new byte[0];
         for (Block block : blocks) {
             int length = block.getLength();
-            try{
+            try {
                 byte[] blockBytes = ByteArrayUtils.copySubArray(data, offset, length);
+                if (block.getPass() != 1)
+                    allFrameData = ByteArrayUtils.mergeBytes(allFrameData, blockBytes);
                 block.setBuffer(blockBytes);
                 block.parseData(parsedVars);
             } catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println(block.getName());
+                System.out.println(block.getName() + "parse error");
                 System.out.println(block.getLength());
             }
             offset += length;
         }
+        //将整帧数据添加到最后一个ParsedVar中
+        addAllReceive(parsedVars, data);
+        System.out.println(ByteArrayUtils.printAsHex(allFrameData));
         offset = 0;
+    }
+
+    private void addAllReceive(List<ParsedVar> vars, byte[] bytes) {
+        byte[] data = ByteArrayUtils.copySubArray(bytes, 0, bytes.length - 1);
+        ParsedVar var = new ParsedVar();
+        var.frameName = this.frameName;
+        var.valueType = "byte-array";
+        var.valueName = "allBytes";
+        var.value = data;
+        var.buffer = data;
+        vars.add(var);
     }
 
     public List<Block> getBlocks() {
         return this.blocks;
     }
 
-    //比对数据流中的数据
-    public boolean checkFrame(byte[] bytes) {
-
-        return false;
-    }
-
     public FrameFlag getFlag() {
         return this.flag;
     }
-
 
     private void getParseChain(Element frame) {
         blocks = new ArrayList<>();

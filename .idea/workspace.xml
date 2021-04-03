@@ -5,11 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a67abb8-6655-4d01-9eb2-5aa8b7b685b5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/exception/NodeAttributeNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/exception/NodeAttributeNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/exception/ParsedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/exception/ParsedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/exception/ProtoNodeNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/exception/ProtoNodeNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CharTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/EndianTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/parseTest/BitParseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/parseTest/TimeNodeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/FrameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/FrameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/FrameFlag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/FrameFlag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/LoopNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/LoopNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/ParseableNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/ParseableNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/ParsedVar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/ParsedVar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/RandomNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/RandomNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/SegNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/SegNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/TimeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/TimeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/utils/BitUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/utils/BitUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/utils/ByteArrayUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/utils/ByteArrayUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/utils/BytesToPrimaryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/utils/BytesToPrimaryType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/utils/PrimaryTypeToBytes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/utils/PrimaryTypeToBytes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/utils/TLVUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/utils/TLVUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/BitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/BitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProtocolTool-1.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProtocolTool-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/FrameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/FrameManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/exception/NodeAttributeNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/exception/NodeAttributeNotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/exception/ParsedException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/exception/ParsedException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/exception/ProtoNodeNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/exception/ProtoNodeNotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/Block.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/Frame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/FrameFlag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/FrameFlag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/LoopNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/LoopNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/ParseableNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/ParseableNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/ParsedVar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/ParsedVar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/RandomNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/RandomNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/SegNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/SegNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/TimeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/TimeNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/utils/BitUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/utils/BitUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/utils/ByteArrayUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/utils/ByteArrayUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/utils/BytesToPrimaryType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/utils/BytesToPrimaryType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/utils/PrimaryTypeToBytes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/utils/PrimaryTypeToBytes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/utils/TLVUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/utils/TLVUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/BitTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/BitTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/Test.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,12 +100,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TestApp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TestApp" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -74,9 +113,35 @@
       <recent name="D:\IDEA_WorkSpace\ProtocolTool\src\main\java\com\zstu\byte_convert" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.BitParseTest">
+    <configuration name="BitParseTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parseTest.BitParseTest" />
+      <module name="ProtocolTool" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parseTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BitTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.BitTest" />
+      <module name="ProtocolTool" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EndianTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.EndianTest" />
       <module name="ProtocolTool" />
       <extension name="coverage">
         <pattern>
@@ -101,21 +166,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
+    <configuration name="TimeNodeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parseTest.TimeNodeTest" />
+      <module name="ProtocolTool" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parseTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.BitParseTest" />
+        <item itemvalue="Application.TimeNodeTest" />
         <item itemvalue="Application.BitTest" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.EndianTest" />
       </list>
     </recent_temporary>
   </component>
@@ -131,7 +201,25 @@
       <workItem from="1613476908860" duration="5948000" />
       <workItem from="1613686564280" duration="23823000" />
       <workItem from="1614086761757" duration="16683000" />
-      <workItem from="1614180633682" duration="44645000" />
+      <workItem from="1614180633682" duration="48482000" />
+      <workItem from="1614596314881" duration="8041000" />
+      <workItem from="1615097305564" duration="42217000" />
+      <workItem from="1615197393089" duration="670000" />
+      <workItem from="1615223973159" duration="1892000" />
+      <workItem from="1615303589850" duration="5618000" />
+      <workItem from="1615443527029" duration="8466000" />
+      <workItem from="1615543195682" duration="6557000" />
+      <workItem from="1615712708069" duration="799000" />
+      <workItem from="1615776778831" duration="5093000" />
+      <workItem from="1615948363919" duration="1577000" />
+      <workItem from="1616226504686" duration="1295000" />
+      <workItem from="1616378750700" duration="18490000" />
+      <workItem from="1616589003997" duration="2315000" />
+      <workItem from="1616812620954" duration="5320000" />
+      <workItem from="1616984972779" duration="2629000" />
+      <workItem from="1617262093247" duration="3672000" />
+      <workItem from="1617330358957" duration="14828000" />
+      <workItem from="1617419319583" duration="1313000" />
     </task>
     <servers />
   </component>
@@ -143,74 +231,145 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="684" y="342" key="#Notifications/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1614081611750" />
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1614331544751">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="612" y="186" key="#com.intellij.ide.util.MemberChooser" timestamp="1617342323725">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="612" y="186" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1617342323725" />
     <state x="-1308" y="186" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1536.824@-1920.0.1536.824" timestamp="1614329608887" />
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1614331544751" />
+    <state x="544" y="279" width="448" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1615169602837">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="544" y="279" width="448" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1615169602837" />
     <state x="439" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613315919534">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="439" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1613315919534" />
-    <state x="715" y="221" key="#xdebugger.evaluate" timestamp="1614187154939">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="572" y="175" key="#xdebugger.evaluate" timestamp="1617333570241">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="572" y="175" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1617333570241" />
     <state x="715" y="221" key="#xdebugger.evaluate/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1614187154939" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1614519553674">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="482" height="466" key="DebuggerActiveHint" timestamp="1617333646259">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="482" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1617333646259" />
+    <state x="504" y="0" key="Diagram.Print.Preview.Dialog" timestamp="1616429919373">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="504" y="0" key="Diagram.Print.Preview.Dialog/0.0.1536.824@0.0.1536.824" timestamp="1616429919373" />
+    <state x="592" y="217" key="FileChooserDialogImpl" timestamp="1617419362369">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="592" y="217" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1617419362369" />
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1614519553674" />
-    <state width="1875" height="203" key="GridCell.Tab.0.bottom" timestamp="1614329890126">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="340" key="GridCell.Tab.0.bottom" timestamp="1617419274201">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="340" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617419274201" />
     <state width="1875" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@-1920.0.1536.824" timestamp="1614329663478" />
     <state width="1875" height="203" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1614329890126" />
-    <state width="1875" height="203" key="GridCell.Tab.0.center" timestamp="1614329890126">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="340" key="GridCell.Tab.0.center" timestamp="1617419274201">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="340" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617419274201" />
     <state width="1875" height="274" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@-1920.0.1536.824" timestamp="1614329663478" />
     <state width="1875" height="203" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1614329890126" />
-    <state width="1875" height="203" key="GridCell.Tab.0.left" timestamp="1614329890126">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="340" key="GridCell.Tab.0.left" timestamp="1617419274201">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="340" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617419274201" />
     <state width="1875" height="274" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@-1920.0.1536.824" timestamp="1614329663477" />
     <state width="1875" height="203" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1614329890126" />
-    <state width="1875" height="203" key="GridCell.Tab.0.right" timestamp="1614329890126">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="340" key="GridCell.Tab.0.right" timestamp="1617419274201">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="340" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617419274201" />
     <state width="1875" height="274" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@-1920.0.1536.824" timestamp="1614329663478" />
     <state width="1875" height="203" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1614329890126" />
-    <state width="1877" height="248" key="GridCell.Tab.1.bottom" timestamp="1614233061787">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="340" key="GridCell.Tab.1.bottom" timestamp="1617419274201">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="340" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617419274201" />
     <state width="1877" height="248" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1614233061787" />
-    <state width="1877" height="248" key="GridCell.Tab.1.center" timestamp="1614233061787">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="340" key="GridCell.Tab.1.center" timestamp="1617419274201">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="340" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1617419274201" />
     <state width="1877" height="248" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1614233061787" />
-    <state width="1877" height="248" key="GridCell.Tab.1.left" timestamp="1614233061787">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="340" key="GridCell.Tab.1.left" timestamp="1617419274201">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="340" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1617419274201" />
     <state width="1877" height="248" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1614233061787" />
-    <state width="1877" height="248" key="GridCell.Tab.1.right" timestamp="1614233061787">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="340" key="GridCell.Tab.1.right" timestamp="1617419274201">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="340" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1617419274201" />
     <state width="1877" height="248" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1614233061787" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1613468184265">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="369" y="113" key="SettingsEditor" timestamp="1617419214282">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="369" y="113" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1617419214282" />
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1613468184265" />
-    <state x="-1920" y="0" width="1543" height="697" maximized="true" key="dock-window-1" timestamp="1614178483286">
-      <screen x="-1920" y="0" width="1536" height="824" />
+    <state x="474" y="246" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1617332545445">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="474" y="246" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1617332545445" />
+    <state x="289" y="318" width="1207" height="446" key="dock-window-1" timestamp="1615111123530">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="289" y="318" width="1207" height="446" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1615111123530" />
     <state x="-1920" y="0" width="1543" height="697" maximized="true" key="dock-window-1/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1614178483286" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1614061375025">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="178" y="22" key="new project wizard" timestamp="1615611120885">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="178" y="22" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1615611120885" />
+    <state x="493" y="190" key="run.anything.popup" timestamp="1614570100755">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="493" y="190" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1614570100755" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1614061375025" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614154743405">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup" timestamp="1614928400433">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1614928400433" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1614154743405" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/RandomNode.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/RandomNode.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/RandomNode.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Block.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Block.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="block" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

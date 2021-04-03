@@ -1,6 +1,7 @@
 package com;
 
 import com.zstu.utils.ByteArrayUtils;
+import com.zstu.utils.BytesToPrimaryType;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -9,6 +10,7 @@ import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Arrays;
+import java.util.Calendar;
 
 /**
  * @auther Stiles-JKY
@@ -38,11 +40,19 @@ public class Test {
 
 //        String a = "00,00,00,01,00,00,00,01,00,00,00,01,be,be,be,be,03,03,03,03,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00";
 //        System.out.println(Arrays.toString(a.split(",")));
-        byte[] arr = {1,2,3,4};
-        Son s = new Son(arr);
-        arr = null;
-        System.out.println(Arrays.toString(s.arr));
-        System.out.println(s.getA());
+//        byte[] arr = {1,2,3,4};
+//        Son s = new Son(arr);
+//        arr = null;
+//        System.out.println(Arrays.toString(s.arr));
+//        System.out.println(s.getA());
+        byte[] date = {0, 0, 7, -27, 0, 0, 0, 2, 0, 0, 0, 7, 0, 0, 0, 17, 0, 0, 0, 3, 0, 0, 0, 37};
+        System.out.println(Calendar.getInstance().get(Calendar.MONTH));
+        int offset = 0;
+        while (offset < date.length) {
+            byte[] bytes = ByteArrayUtils.copySubArray(date, offset, 4);
+            System.out.println(BytesToPrimaryType.toInt(bytes));
+            offset += 4;
+        }
     }
 
 

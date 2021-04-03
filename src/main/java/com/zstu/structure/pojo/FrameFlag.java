@@ -23,6 +23,7 @@ public class FrameFlag {
             throw new NodeAttributeNotFoundException("can't find attribute var in " + starter.getParentElement().getAttributeValue("name"));
         String[] starterStrs = var.split(",");
         this.starters = ByteArrayUtils.hexToByteArray(starterStrs);
+        System.out.println("starts: " + ByteArrayUtils.printAsHex(starters));
         if (starters == null) throw new NumberFormatException(starter.getParentElement().getAttributeValue("name"));
         this.length = starters.length;
     }

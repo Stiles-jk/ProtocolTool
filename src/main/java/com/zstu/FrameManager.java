@@ -6,6 +6,7 @@ import com.zstu.exception.ProtoNodeNotFoundException;
 import com.zstu.structure.pojo.Frame;
 import com.zstu.structure.pojo.FrameFlag;
 import com.zstu.structure.pojo.ParsedVar;
+import com.zstu.utils.ByteArrayUtils;
 import com.zstu.utils.XMLUtils;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -90,7 +91,7 @@ public class FrameManager {
             boolean flag = f.getFlag().checkStarter(data);
             if (flag) frame = f;
         }
-        if (frame == null) throw new ParsedException("can't much any farme: " + Arrays.toString(data));
+        if (frame == null) throw new ParsedException("can't much any farme: " + ByteArrayUtils.printAsHex(data));
         //开始解析
         List<ParsedVar> parsedVars = new ArrayList<>();
         if (frame != null) {

@@ -1,6 +1,5 @@
 package com.zstu.structure.pojo;
 
-import com.zstu.exception.ParsedException;
 import org.jdom.Element;
 
 import java.util.ArrayList;
@@ -40,20 +39,31 @@ public class LoopNode extends ParseableNode {
      */
     @Override
     public int parse(byte[] buffer, int offset, List<ParsedVar> parsedVars) {
-        if (loopTime == -1) {
+        int suffix = 1;
+        int temp = loopTime;
+        if (temp == -1) {
             int index = 0;
             while (offset < buffer.length) {
                 offset = loopSegs.get(index % loopSegs.size()).parse(buffer, offset, parsedVars);
                 index++;
             }
         } else {
-            while (loopTime > 0) {
+            while (temp > 0) {
                 for (SegNode seg : loopSegs) {
-                    offset = seg.parse(buffer, offset, parsedVars);
+                    offset = seg.parse(buffer, offset, parsedVars,suffix+"");
+                    suffix++;
                 }
-                loopTime--;
+                temp--;
             }
         }
         return offset;
+    }
+
+    public List<SegNode> getLoopSegs() {
+        return loopSegs;
+    }
+
+    public int getLoopTime() {
+        return loopTime;
     }
 }

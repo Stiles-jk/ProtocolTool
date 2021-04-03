@@ -1,5 +1,8 @@
 package com.zstu.utils;
 
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.Charset;
 import java.util.Arrays;
 
 /**
@@ -95,13 +98,15 @@ public abstract class PrimaryTypeToBytes {
 
     public static byte[] longToBytesLittle(long value, int typesize) {
         byte[] byteRet = new byte[8];
+        //value右边为低位，byteRet[0]位于栈顶为低地址；低位放入低地址，小端方式存储
         for (int i = 0; i < 8; i++) {
             byteRet[i] = (byte) ((value >> 8 * i) & 0xff);
         }
-        int index = 0;
+
+        //小端存储，有效位从byteRet[0]开始
         byte[] result = new byte[typesize];
-        for (int i = 8 - typesize; i < 8; i++) {
-            result[index++] = byteRet[i];
+        for (int i = 0; i < typesize; i++) {
+            result[i] = byteRet[i];
         }
         return result;
     }
@@ -109,13 +114,15 @@ public abstract class PrimaryTypeToBytes {
     public static byte[] longToBytesBig(long value, int typesize) {
         byte[] byteRet = new byte[8];
         int count = 7;
+        //value右边为低位，byteRet[7]为高地址；高地址存低位，大端序
         for (int i = 0; i < 8; i++) {
             byteRet[count--] = (byte) ((value >> 8 * i) & 0xff);
         }
 
         byte[] result = new byte[typesize];
-        for (int i = 0; i < typesize; i++) {
-            result[i] = byteRet[i];
+        int index = typesize - 1;
+        for(int i = 7; i >= 8 - typesize; i--) {
+            result[index--] = byteRet[i];
         }
         return result;
     }
@@ -125,4 +132,28 @@ public abstract class PrimaryTypeToBytes {
         if ("little".equals(endian)) return longToBytesLittle(value, typesize);
         return null;
     }
+
+    public static byte[] charToBytes(char[] chars,String charSet) {
+        Charset cs = Charset.forName(charSet);
+        CharBuffer cb = CharBuffer.allocate(chars.length);
+        cb.put(chars);
+        cb.flip();
+        ByteBuffer bb = cs.encode(cb);
+        return bb.array();
+    }
+
+    public static byte[] shortToBytes(short s,String endian) {
+        byte[] data = new byte[2];
+        if (endian.equals("little")) {
+            data[0] = (byte) ((0xff) & s);
+            s >>>= 8;
+            data[1] = (byte) ((0xff) & s);
+        } else if (endian.equals("big")) {
+            data[1] = (byte) ((0xff) & s);
+            s >>>= 8;
+            data[0] = (byte) ((0xff) & s);
+        }
+        return data;
+    }
+
 }
