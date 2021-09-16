@@ -17,8 +17,8 @@ public class TimeNode extends ParseableNode {
     private List<SegNode> timeSegs;
 
     public TimeNode(Element timeElement, Block block) {
-        super.nodeType = "time";
         if (timeElement == null) return;
+        super.nodeType = "time";
         initBaseInfo(timeElement);
         List<Element> segs = timeElement.getChildren("seg");
         timeSegs = new ArrayList<>();
@@ -47,6 +47,7 @@ public class TimeNode extends ParseableNode {
             time += "/";
         }
         var.valueName = "time";
+        var.valueType = "time";
         var.value = time;
         var.buffer = timeBytes;
         addBaseInfo(var);

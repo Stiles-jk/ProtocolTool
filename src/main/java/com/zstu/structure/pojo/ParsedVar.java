@@ -1,5 +1,7 @@
 package com.zstu.structure.pojo;
 
+import com.zstu.utils.ByteArrayUtils;
+
 import java.io.Serializable;
 import java.util.Arrays;
 
@@ -21,6 +23,7 @@ public class ParsedVar implements Serializable {
     public String deviceName;//值对应的设备名称
     public byte deviceId;//值对应的设备编号
     public byte[] buffer;
+    public boolean random;
 
     @Override
     public String toString() {
@@ -35,6 +38,12 @@ public class ParsedVar implements Serializable {
                 ", deviceName='" + deviceName + '\'' +
                 ", deviceId=" + deviceId +
                 ", buffer=" + Arrays.toString(buffer) +
+                ", random=" + random +
                 '}';
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

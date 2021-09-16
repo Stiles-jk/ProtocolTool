@@ -3,6 +3,7 @@ package com.zstu.utils;
 import com.sun.org.apache.bcel.internal.generic.LNEG;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,40 +23,6 @@ public abstract class ByteArrayUtils {
         }
         System.arraycopy(src, start, subBytes, 0, subBytes.length);
         return subBytes;
-    }
-
-    /**
-     * 从byte-array中获取指定长度的二进制位，并将其转为long输出
-     *
-     * @param src    原byte数组
-     * @param start  数组开始位置
-     * @param length start开始的后length个数组，这里要注意，如果一个byte被分为了多个，则length为前第n个bit的下标 + 1
-     *               例如：byte为 00101111;按位分为两部分，001和01111；
-     *               则length取值为4和8
-     * @return
-     */
-    public static long getBitsFromByteArray(byte[] src, Integer start, int length) {
-        long var = 0;
-        int loop = length / 8;
-        int reduce = length % 8;
-        while (loop > 0) {
-            var <<= 8;
-            var |= (0xff & src[start++]);
-            loop--;
-        }
-        if (reduce > 0) {
-            int ib = (0xff) & src[start];
-//            System.out.println(Integer.toBinaryString(ib));
-            var <<= reduce;
-            ib >>= (8 - reduce);
-            var |= ib;
-            ib <<= (8 - reduce);
-            //修改原有数组中的值
-            src[start] = (byte) (src[start] ^ ib);
-//            System.out.println("modify");
-//            System.out.println(Integer.toBinaryString(src[start]));
-        }
-        return var;
     }
 
     /**
@@ -118,7 +85,6 @@ public abstract class ByteArrayUtils {
             } catch (NumberFormatException e) {
                 return null;
             }
-
         }
         return bytes;
     }
@@ -128,9 +94,24 @@ public abstract class ByteArrayUtils {
         divided[0] = new byte[length];
         System.arraycopy(src, start, divided[0], 0, length);
         byte[] dSrc = new byte[src.length - length];
-        System.arraycopy(src,length,dSrc,0,dSrc.length);
+        System.arraycopy(src, length, dSrc, 0, dSrc.length);
         divided[1] = dSrc;
         return divided;
+    }
+
+    public static List<byte[]> divideAsLength(byte[] src, int size, byte stuff) {
+        List<byte[]> divides = new ArrayList<>();
+        if (src.length % size != 0) {
+            byte[] stuffs = new byte[size - (src.length % size)];
+            src = mergeBytes(src,stuffs);
+        }
+        int offset = 0;
+        while (offset < src.length) {
+            byte[] divide = copySubArray(src,offset,size);
+            divides.add(divide);
+            offset += size;
+        }
+        return divides;
     }
 
     /**

@@ -1,13 +1,16 @@
 package com.zstu.structure.pojo;
 
+import java.time.temporal.ValueRange;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.zstu.exception.CRCException;
 import com.zstu.exception.NodeAttributeNotFoundException;
 import com.zstu.exception.ParsedException;
 import com.zstu.exception.ProtoNodeNotFoundException;
 import com.zstu.utils.BitUtils;
 import com.zstu.utils.ByteArrayUtils;
+import com.zstu.utils.CRCUtils;
 import org.jdom.Element;
 
 
@@ -34,37 +37,69 @@ public class Frame {
         getParseChain(frame);
     }
 
-    public void parse(byte[] recvBytes, List<ParsedVar> parsedVars) throws ParsedException {
+    public void parse(byte[] recvBytes, List<ParsedVar> parsedVars, boolean OESwap) throws ParsedException, CRCException {
         byte[] data = ByteArrayUtils.copySubArray(recvBytes, flag.length, -1);
+
+        System.out.println("before swap: " + ByteArrayUtils.printAsHex(data));
+        data = Odd_EvenSwap(data, OESwap);
+        System.out.println("after swap: " + ByteArrayUtils.printAsHex(data));
+
+        //计算CRC校验
+        byte[] allFrameData = new byte[0];
+        byte[] crcCheckBytes = new byte[0];
+
         for (Block block : blocks) {
             int length = block.getLength();
-            try{
+            try {
                 byte[] blockBytes = ByteArrayUtils.copySubArray(data, offset, length);
+
+                if (block.getShouldCheck()) {
+                    crcCheckBytes = ByteArrayUtils.mergeBytes(crcCheckBytes, blockBytes);
+                }
+
+                if (block.getPass() != 1)
+                    allFrameData = ByteArrayUtils.mergeBytes(allFrameData, blockBytes);
+
                 block.setBuffer(blockBytes);
+
                 block.parseData(parsedVars);
+
             } catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println(block.getName());
+                System.out.println(block.getName() + "parse error");
                 System.out.println(block.getLength());
             }
             offset += length;
         }
+
+        //CRC校验
+        int checkSum = CRCUtils.CRC_MPEG_2(crcCheckBytes);
+        if (checkSum != 0) {
+            throw new CRCException(checkSum + "");
+        }
+        //将整帧数据添加到最后一个ParsedVar中
+        addAllReceive(parsedVars, data);
+        System.out.println(ByteArrayUtils.printAsHex(allFrameData));
         offset = 0;
+    }
+
+    private void addAllReceive(List<ParsedVar> vars, byte[] bytes) {
+        byte[] data = ByteArrayUtils.copySubArray(bytes, 0, bytes.length);
+        ParsedVar var = new ParsedVar();
+        var.frameName = this.frameName;
+        var.valueType = "byte-array";
+        var.valueName = "allBytes";
+        var.value = data;
+        var.buffer = data;
+        vars.add(var);
     }
 
     public List<Block> getBlocks() {
         return this.blocks;
     }
 
-    //比对数据流中的数据
-    public boolean checkFrame(byte[] bytes) {
-
-        return false;
-    }
-
     public FrameFlag getFlag() {
         return this.flag;
     }
-
 
     private void getParseChain(Element frame) {
         blocks = new ArrayList<>();
@@ -72,5 +107,17 @@ public class Frame {
         for (Element element : blockElements) {
             blocks.add(new Block(element, this));
         }
+    }
+
+    private byte[] Odd_EvenSwap(byte[] data, boolean swap) {
+        if (!swap) return data;
+        if (data == null) return new byte[]{0};
+        for (int i = 0; i < data.length; i += 2) {
+            byte temp = data[i];
+            if (i + 1 >= data.length) break;
+            data[i] = data[i + 1];
+            data[i + 1] = temp;
+        }
+        return data;
     }
 }

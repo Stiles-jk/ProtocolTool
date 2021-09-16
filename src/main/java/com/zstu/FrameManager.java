@@ -1,11 +1,13 @@
 package com.zstu;
 
+import com.zstu.exception.CRCException;
 import com.zstu.exception.NodeAttributeNotFoundException;
 import com.zstu.exception.ParsedException;
 import com.zstu.exception.ProtoNodeNotFoundException;
 import com.zstu.structure.pojo.Frame;
 import com.zstu.structure.pojo.FrameFlag;
 import com.zstu.structure.pojo.ParsedVar;
+import com.zstu.utils.ByteArrayUtils;
 import com.zstu.utils.XMLUtils;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -29,6 +31,7 @@ import java.util.List;
 public class FrameManager {
 
     private List<Frame> frameList;
+    private boolean OESwap;
 
     private static volatile FrameManager FRAMEMANAGER = null;
 
@@ -78,24 +81,30 @@ public class FrameManager {
         if (xmlFile.exists() == false || xmlFile.canRead() == false)
             throw new FileNotFoundException("can't find xml file" + path);
         Element root = XMLUtils.getRoot(xmlFile);
+        OESwap = Boolean.parseBoolean(root.getAttributeValue("OESwap"));
+        System.out.println("OESwap: " + OESwap);
         List<Element> frames = root.getChildren("frame");
         for (Element frame : frames) {
             this.frameList.add(new Frame(frame));
         }
     }
 
-    public List<ParsedVar> doParse(byte[] data) throws ParsedException {
+    public List<ParsedVar> doParse(byte[] data) throws ParsedException, CRCException {
+
         Frame frame = null;
         for (Frame f : frameList) {
             boolean flag = f.getFlag().checkStarter(data);
             if (flag) frame = f;
         }
-        if (frame == null) throw new ParsedException("can't much any farme: " + Arrays.toString(data));
+        if (frame == null) throw new ParsedException("can't match any farme: " + ByteArrayUtils.printAsHex(data));
+
         //开始解析
         List<ParsedVar> parsedVars = new ArrayList<>();
         if (frame != null) {
-            frame.parse(data, parsedVars);
+            frame.parse(data, parsedVars, OESwap);
         }
         return parsedVars;
     }
+
+
 }

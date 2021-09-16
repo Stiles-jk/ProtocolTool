@@ -31,11 +31,16 @@ public abstract class ParseableNode {
         var.blockName = this.blockName;
     }
 
+
     protected Object parsePrimaryType(byte[] bytes, String type, String endian) {
         Object primaryType = null;
         switch (type) {
             case "byte":
-                primaryType = bytes[0];
+                if ("big".equals(endian)) {
+                    primaryType = bytes[bytes.length - 1];
+                } else {
+                    primaryType = bytes[0];
+                }
                 break;
             case "int":
                 if (bytes.length == 8) {
@@ -60,6 +65,10 @@ public abstract class ParseableNode {
             case "short":
                 primaryType = BytesToPrimaryType.toShort(bytes, endian);
                 break;
+            case "string":
+                String str = ByteArrayUtils.printAsHex(bytes);
+                primaryType = "0x" + str.replaceAll(",", "");
+
             default:
                 break;
         }
