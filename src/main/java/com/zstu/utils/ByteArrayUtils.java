@@ -85,7 +85,6 @@ public abstract class ByteArrayUtils {
             } catch (NumberFormatException e) {
                 return null;
             }
-
         }
         return bytes;
     }

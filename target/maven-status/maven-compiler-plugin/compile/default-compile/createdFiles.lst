@@ -8,6 +8,7 @@ com\zstu\structure\pojo\Block.class
 com\zstu\FrameManager.class
 com\zstu\structure\pojo\Frame.class
 com\zstu\utils\PrimaryTypeToBytes.class
+com\zstu\exception\CRCException.class
 com\zstu\utils\BitUtils.class
 com\zstu\structure\pojo\SegNode.class
 com\zstu\structure\pojo\TimeNode.class

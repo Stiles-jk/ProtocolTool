@@ -167,11 +167,15 @@ public abstract class BytesToPrimaryType {
     public static short toShort(byte[] bytes, String endian) {
         short s = 0;
         if ("big".equals(endian)) {
+            if (bytes.length == 1) {
+                bytes = new byte[]{0, bytes[0]};
+            }
             for (int i = 0; i < 2; i++) {
                 s <<= 8;
                 s |= (bytes[i] & 0xff);
             }
         } else if ("little".equals(endian)) {
+            bytes = new byte[]{bytes[0], 0};
             for (int i = 1; i >= 0; i--) {
                 s <<= 8;
                 s |= (bytes[i] & 0xff);

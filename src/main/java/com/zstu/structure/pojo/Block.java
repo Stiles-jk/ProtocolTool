@@ -26,6 +26,7 @@ public class Block {
     private String type;
     private byte typesize = -1;
     private String endian = "big";
+    private boolean shouldCheck;
 
     private byte[] buffer;//存放数据帧中的一个数据块，单位为byte
     private List<ParseableNode> parseableNodes;//当前block中待解析节点
@@ -39,9 +40,11 @@ public class Block {
         if (blockElement.getAttribute("endian") != null) {
             this.endian = Byte.parseByte(blockElement.getAttributeValue("endian"), 16) == 1 ? "big" : "little";
         }
+        this.shouldCheck = Boolean.parseBoolean(blockElement.getAttributeValue("check"));
         this.buffer = new byte[this.length];
         this.frameName = frame.frameName;
         this.frameAddr = frame.frameAddr;
+
         this.parseableNodes = new LinkedList<>();
         creatParseableNodes(blockElement);
     }
@@ -87,6 +90,7 @@ public class Block {
             parsedVars.add(var);
             return;
         }
+
         if (this.pass != 1 && type != null && type.contains("-array") && typesize != -1) {
             Object array = parseToPrimaryArray(buffer, type, typesize, endian);
             ParsedVar var = new ParsedVar();
@@ -99,7 +103,6 @@ public class Block {
             var.valueType = type;
             var.valueName = name;
             parsedVars.add(var);
-            return;
         } else {
             for (ParseableNode p : parseableNodes) {
                 offset = p.parse(buffer, offset, parsedVars);
@@ -178,6 +181,10 @@ public class Block {
         return array;
     }
 
+
+    public boolean getShouldCheck() {
+        return this.shouldCheck;
+    }
 
     public int getLength() {
         return this.length;

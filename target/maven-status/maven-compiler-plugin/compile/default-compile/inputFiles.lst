@@ -11,9 +11,11 @@ D:\IDEA_WorkSpace\ProtocolTool\src\main\java\com\zstu\structure\pojo\LoopNode.ja
 D:\IDEA_WorkSpace\ProtocolTool\src\main\java\com\zstu\utils\XMLUtils.java
 D:\IDEA_WorkSpace\ProtocolTool\src\main\java\com\zstu\structure\pojo\Frame.java
 D:\IDEA_WorkSpace\ProtocolTool\src\main\java\com\zstu\structure\pojo\RandomNode.java
+D:\IDEA_WorkSpace\ProtocolTool\src\main\java\com\zstu\exception\CRCException.java
 D:\IDEA_WorkSpace\ProtocolTool\src\main\java\com\zstu\exception\NodeAttributeNotFoundException.java
 D:\IDEA_WorkSpace\ProtocolTool\src\main\java\com\zstu\structure\pojo\ParseableNode.java
 D:\IDEA_WorkSpace\ProtocolTool\src\main\java\com\zstu\structure\pojo\FrameFlag.java
+D:\IDEA_WorkSpace\ProtocolTool\src\main\java\com\zstu\utils\CRCUtils.java
 D:\IDEA_WorkSpace\ProtocolTool\src\main\java\com\zstu\exception\ParsedException.java
 D:\IDEA_WorkSpace\ProtocolTool\src\main\java\com\zstu\exception\ProtoNodeNotFoundException.java
 D:\IDEA_WorkSpace\ProtocolTool\src\main\java\com\zstu\utils\ByteArrayUtils.java

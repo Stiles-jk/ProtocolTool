@@ -8,7 +8,6 @@ import com.zstu.utils.ByteArrayUtils;
 import com.zstu.utils.BytesToPrimaryType;
 import com.zstu.utils.PrimaryTypeToBytes;
 import org.jdom.Element;
-import sun.rmi.runtime.Log;
 
 
 /**
@@ -37,6 +36,7 @@ public class RandomNode extends ParseableNode {
         super.frameName = block.frameName;
         super.frameAddr = block.frameAddr;
         super.blockName = block.name;
+
         for (Element c : children) {
             String cName = c.getName();
             if (cName.equals("length")) {
@@ -90,9 +90,9 @@ public class RandomNode extends ParseableNode {
 
     @Override
     public int parse(byte[] buffer, int offset, List<ParsedVar> parsedVars) {
-
         //获取长度信息
         int lengthInfo = getLengthInfo(buffer, offset, parsedVars);
+
         if ("bit".equals(lengthRangeUnit)) {
             if (end) {
                 offset += (preBits + lengthRange) / 8;
@@ -100,6 +100,7 @@ public class RandomNode extends ParseableNode {
         } else {
             offset += lengthRange;
         }
+
         //获取lengthInfo长度的数据
         byte[] dataRange = ByteArrayUtils.copySubArray(buffer, offset, lengthInfo);
         if (this.pass == 1) {

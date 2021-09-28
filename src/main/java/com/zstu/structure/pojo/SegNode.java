@@ -73,12 +73,13 @@ public class SegNode extends ParseableNode {
             } else {
                 parseAsBits(segLong, var);
             }
-
             if (end) {
                 offset += ((preBits + typeSize) / 8);//位操作结束，加上offset
             }
+
         } else {
             byte[] segBytes = null;
+
             try {
 //                System.out.println(Arrays.toString(buffer));
 //                System.out.println("length : " + length);
@@ -89,6 +90,7 @@ public class SegNode extends ParseableNode {
                 System.out.println("error segName: " + super.nodeName);
                 System.out.println("error length: " + length);
             }
+
             if (pass == 1) {
                 var.parsed = false;
                 var.value = segBytes;
