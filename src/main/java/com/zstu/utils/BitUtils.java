@@ -6,15 +6,6 @@ package com.zstu.utils;
  */
 public abstract class BitUtils {
 
-    public long mergeBytes(byte[] bytes) {
-        long l = 0;
-        for (int i = 0; i < bytes.length; i++) {
-            l &= (l & bytes[i]);
-            l <<= 8;
-        }
-        return l;
-    }
-
     public static byte[] takeBytesByBit(byte[] bytes, int bitLength) {
         int len = bitLength % 8 == 0 ? bitLength / 4 : bitLength / 4 + 1;
         byte[] bs = new byte[len];
@@ -91,18 +82,20 @@ public abstract class BitUtils {
     /**
      * @param src      原数组
      * @param offset   数组索引
-     * @param typesize 数组索引到
+     * @param typesize 长度
      * @return
      */
     public static long getBitsFromByteArrayBig(byte[] src, int offset, int preBits, int typesize) {
         byte[] sub;
+        //最多取8个字节
         if (src.length - offset > 8) {
-            sub = ByteArrayUtils.copySubArray(src, offset, 8);//去除前位的干扰
+            sub = ByteArrayUtils.copySubArray(src, offset, 8);
         } else {
-            sub = ByteArrayUtils.copySubArray(src, offset, -1);//去除前位的干扰
+            sub = ByteArrayUtils.copySubArray(src, offset, -1);
         }
 
-        long var = 0;
+        long var;
+        //以大端将子数字解析为long
         long big = BytesToPrimaryType.toLong(sub, "big");
         int zeroCount = 0;
         byte[] bytes = PrimaryTypeToBytes.longToBytesBig(big, 8);
@@ -112,12 +105,11 @@ public abstract class BitUtils {
             }
             zeroCount++;
         }
-//        System.out.println(Long.toBinaryString(var));
         var = big;
-        var <<= (preBits + 8 * zeroCount);
-//        System.out.println(Long.toBinaryString(var));
+        //移除左边零位
+        var <<= (preBits + 8L * zeroCount);
+        //保留typesize个bit
         var >>>= (64 - typesize);
-//        System.out.println(Long.toBinaryString(var));
         return var;
     }
 
@@ -125,27 +117,22 @@ public abstract class BitUtils {
     public static long getBitsFromByteArrayLittle(byte[] src, int offset, int preBits, int typesize) {
         byte[] sub;
         if (src.length - offset > 8) {
-            sub = ByteArrayUtils.copySubArray(src, offset, 8);//去除前位的干扰
+            sub = ByteArrayUtils.copySubArray(src, offset, 8);
         } else {
-            sub = ByteArrayUtils.copySubArray(src, offset, -1);//去除前位的干扰
+            sub = ByteArrayUtils.copySubArray(src, offset, -1);
         }
-        long var = 0;
-        long little = BytesToPrimaryType.toLong(sub, "little");
-//        System.out.println(Long.toBinaryString(little));
-        var = little;
-//        System.out.println(Long.toBinaryString(var));
+        long var;
+        var = BytesToPrimaryType.toLong(sub, "little");
+        //移除已使用的preBits
         var >>>= preBits;
         var <<= (64 - typesize);
-//        System.out.println(Long.toBinaryString(var));
         var >>>= (64 - typesize);
-//        System.out.println(Long.toBinaryString(var));
         return var;
     }
 
     public static byte[] littleToBig(byte[] src) {
         long little = BytesToPrimaryType.toLong(src, "little");
-        byte[] bigBytes = PrimaryTypeToBytes.longToBytesBig(little, src.length);
-        return bigBytes;
+        return PrimaryTypeToBytes.longToBytesBig(little, src.length);
     }
 
     /**
@@ -157,7 +144,7 @@ public abstract class BitUtils {
      * @return
      */
     public static long tackBitsFromLong(boolean front, long src, int size) {
-        long var = 0;
+        long var;
         int range = 64 - size;
         if (front) {
             while (range > 0) {

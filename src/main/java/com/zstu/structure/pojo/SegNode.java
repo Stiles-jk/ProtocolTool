@@ -16,15 +16,22 @@ import java.util.List;
  * @author jky
  */
 public class SegNode extends ParseableNode {
-
-    private String type;// 数据类型
-    private byte typeSize;// 数据所占内存大小
+    /**数据类型*/
+    private final String type;
+    /**数据所占内存大小*/
+    private final byte typeSize;
+    /**前面已经使用的bit数量*/
     private byte preBits;
+    /**是否从此处开始停止位解析*/
     private boolean end;
-    private String unit;// 数据所占内存大小的单位
-    private String endian;// 大小端
-    private byte pass;//是否跳过
-    private int length;//byte长度
+    /**数据所占内存大小的单位*/
+    private final String unit;
+    /**大小端*/
+    private final String endian;
+    /**是否跳过*/
+    private final byte pass;
+    /**byte长度*/
+    private final int length;
 
     public SegNode(Element seg) {
         super.nodeType = "seg";
@@ -35,7 +42,7 @@ public class SegNode extends ParseableNode {
         this.endian = seg.getAttributeValue("endian") == null ? "big" : (Byte.parseByte(seg.getAttributeValue("endian"), 16) == 1 ? "big" : "little");
         this.pass = (byte) (seg.getAttributeValue("pass") == null ? 1 : Byte.parseByte(seg.getAttributeValue("pass")));
         this.length = super.calcLength(unit, typeSize);
-        if (unit.equals("bit")) {
+        if ("bit".equals(unit)) {
             preBits = Byte.parseByte(seg.getAttributeValue("preBits"));
             if (seg.getAttribute("end") != null) {
                 end = Boolean.parseBoolean(seg.getAttributeValue("end"));
@@ -65,40 +72,10 @@ public class SegNode extends ParseableNode {
 //        System.out.println(ByteArrayUtils.printAsHex(buffer));
         //get bytes from buffer
         if ("bit".equals(this.unit)) {
-            long segLong = BitUtils.getBitsFromByteArray(buffer, offset, preBits, typeSize, endian);
-            System.out.println(Long.toBinaryString(segLong));
-            if (pass == 1) {
-                var.parsed = false;
-                var.value = segLong;
-            } else {
-                parseAsBits(segLong, var);
-            }
-            if (end) {
-                offset += ((preBits + typeSize) / 8);//位操作结束，加上offset
-            }
+            offset = parseAsBit(buffer, offset, var);
 
         } else {
-            byte[] segBytes = null;
-
-            try {
-//                System.out.println(Arrays.toString(buffer));
-//                System.out.println("length : " + length);
-                segBytes = ByteArrayUtils.copySubArray(buffer, offset, length);
-//                System.out.println("copyData : " + ByteArrayUtils.printAsHex(segBytes));
-            } catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println("error offset: " + offset);
-                System.out.println("error segName: " + super.nodeName);
-                System.out.println("error length: " + length);
-            }
-
-            if (pass == 1) {
-                var.parsed = false;
-                var.value = segBytes;
-            } else {
-                parseAsBytes(segBytes, var);
-            }
-
-            offset += length;
+            offset = parseAsByte(buffer, offset, var);
         }
         var.valueName = this.nodeName;
         var.valueType = this.type;
@@ -106,6 +83,46 @@ public class SegNode extends ParseableNode {
         if (super.devId != null) var.deviceId = Byte.parseByte(super.devId);
         addBaseInfo(var);
         parsedVars.add(var);
+        return offset;
+    }
+
+    private int parseAsByte(byte[] buffer, int offset, ParsedVar var) {
+        byte[] segBytes = null;
+
+        try {
+//                System.out.println(Arrays.toString(buffer));
+//                System.out.println("length : " + length);
+            segBytes = ByteArrayUtils.copySubArray(buffer, offset, length);
+//                System.out.println("copyData : " + ByteArrayUtils.printAsHex(segBytes));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("error offset: " + offset);
+            System.out.println("error segName: " + super.nodeName);
+            System.out.println("error length: " + length);
+        }
+
+        if (pass == 1) {
+            var.parsed = false;
+            var.value = segBytes;
+        } else {
+            parseAsBytes(segBytes, var);
+        }
+
+        offset += length;
+        return offset;
+    }
+
+    private int parseAsBit(byte[] buffer, int offset, ParsedVar var) {
+        long segLong = BitUtils.getBitsFromByteArray(buffer, offset, preBits, typeSize, endian);
+        System.out.println(Long.toBinaryString(segLong));
+        if (pass == 1) {
+            var.parsed = false;
+            var.value = segLong;
+        } else {
+            parseAsBits(segLong, var);
+        }
+        if (end) {
+            offset += ((preBits + typeSize) / 8);//位操作结束，加上offset
+        }
         return offset;
     }
 

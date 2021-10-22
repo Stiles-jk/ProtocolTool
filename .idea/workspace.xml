@@ -5,75 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a67abb8-6655-4d01-9eb2-5aa8b7b685b5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zstu/exception/CRCException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zstu/utils/CRCUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/ByteBufferTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/ThreadTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProtocolTool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProtocolTool.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/FrameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/FrameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/exception/NodeAttributeNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/exception/NodeAttributeNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/exception/ParsedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/exception/ParsedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/exception/ProtoNodeNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/exception/ProtoNodeNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Block.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Frame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/FrameFlag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/FrameFlag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/LoopNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/LoopNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/ParseableNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/ParseableNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/ParsedVar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/ParsedVar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/RandomNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/RandomNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/SegNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/SegNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/TimeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/TimeNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/utils/BitUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/utils/BitUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/utils/ByteArrayUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/utils/ByteArrayUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/utils/BytesToPrimaryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/utils/BytesToPrimaryType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/utils/PrimaryTypeToBytes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/utils/PrimaryTypeToBytes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/utils/TLVUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/utils/TLVUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/utils/XMLUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/utils/XMLUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/BitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/BitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CharTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CharTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/EndianTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/EndianTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/Father.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Father.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/LinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/LinkedListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/Son.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Son.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/parseTest/BitParseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/parseTest/BitParseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/parseTest/TimeNodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/parseTest/TimeNodeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ProtocolTool-1.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProtocolTool-1.0-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ProtocolTool-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProtocolTool-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/FrameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/FrameManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/Block.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/Frame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/RandomNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/structure/pojo/RandomNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/utils/BitUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/utils/BitUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zstu/utils/BytesToPrimaryType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zstu/utils/BytesToPrimaryType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.BitTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.BitTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.CharTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.CharTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.EndianTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.EndianTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.LinkedListTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.LinkedListTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-parseTest.BitParseTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-parseTest.BitParseTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-parseTest.TimeNodeTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-parseTest.TimeNodeTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.BitTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.BitTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.CharTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.CharTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.EndianTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.EndianTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.LinkedListTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.LinkedListTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/parseTest.BitParseTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/parseTest.BitParseTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/parseTest.TimeNodeTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/parseTest.TimeNodeTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/EndianTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/EndianTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/parseTest/BitParseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/parseTest/BitParseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/parseTest/TimeNodeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/parseTest/TimeNodeTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,10 +36,10 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/zstu/utils/BytesToPrimaryType.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/zstu/utils/PrimaryTypeToBytes.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/zstu/FrameManager.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zstu/utils/PrimaryTypeToBytes.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/zstu/utils/ByteArrayUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zstu/utils/BytesToPrimaryType.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -288,7 +225,8 @@
       <workItem from="1625127912385" duration="6519000" />
       <workItem from="1625327018821" duration="632000" />
       <workItem from="1627451219270" duration="1030000" />
-      <workItem from="1632827899588" duration="629000" />
+      <workItem from="1632827899588" duration="1893000" />
+      <workItem from="1634915764020" duration="2789000" />
     </task>
     <servers />
   </component>
@@ -300,12 +238,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Block.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Block.java</url>
-          <line>107</line>
+          <line>112</line>
           <option name="timeStamp" value="84" />
         </line-breakpoint>
       </breakpoints>

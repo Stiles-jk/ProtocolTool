@@ -1,5 +1,6 @@
 package com.zstu.structure.pojo;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class Block {
     private String type;
     private byte typesize = -1;
     private String endian = "big";
+    //是否进行crc校验
     private boolean shouldCheck;
 
     private byte[] buffer;//存放数据帧中的一个数据块，单位为byte
@@ -53,13 +55,13 @@ public class Block {
         List<Element> pElements = block.getChildren();
         for (Element pElement : pElements) {
             ParseableNode pn = null;
-            if (pElement.getName().equals("seg")) {
+            if ("seg".equals(pElement.getName())) {
                 pn = new SegNode(pElement);
-            } else if (pElement.getName().equals("time")) {
+            } else if ("time".equals(pElement.getName())) {
                 pn = new TimeNode(pElement, this);
-            } else if (pElement.getName().equals("random")) {
+            } else if ("random".equals(pElement.getName())) {
                 pn = new RandomNode(pElement, this);
-            } else if (pElement.getName().equals("loop")) {
+            } else if ("loop".equals(pElement.getName())) {
                 pn = new LoopNode(pElement, this);
             }
             if (pn == null) continue;
@@ -88,10 +90,12 @@ public class Block {
             var.parsed = false;
             var.buffer = buffer;
             parsedVars.add(var);
+            Arrays.fill(buffer, (byte) 0);
+            offset = 0;
             return;
         }
-
-        if (this.pass != 1 && type != null && type.contains("-array") && typesize != -1) {
+        //block作为基本类型的数组
+        if (type != null && type.contains("-array") && typesize != -1) {
             Object array = parseToPrimaryArray(buffer, type, typesize, endian);
             ParsedVar var = new ParsedVar();
             var.blockName = name;
@@ -104,14 +108,13 @@ public class Block {
             var.valueName = name;
             parsedVars.add(var);
         } else {
+            //按照block中的seg进行解析
             for (ParseableNode p : parseableNodes) {
                 offset = p.parse(buffer, offset, parsedVars);
             }
         }
         //清空buffer中的数据
-        for (int i = 0; i < buffer.length; i++) {
-            buffer[i] = 0;
-        }
+        Arrays.fill(buffer, (byte) 0);
         offset = 0;
     }
 

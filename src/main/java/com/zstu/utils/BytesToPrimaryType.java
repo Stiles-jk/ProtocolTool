@@ -298,7 +298,7 @@ public abstract class BytesToPrimaryType {
     }
 
     public static byte getTypeDefaultSize(String type) {
-        byte size = -1;
+        byte size = 1;
         switch (type) {
             case "int":
                 size = 4;

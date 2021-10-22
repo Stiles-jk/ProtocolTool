@@ -1,6 +1,5 @@
 package com.zstu.structure.pojo;
 
-import java.time.temporal.ValueRange;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +7,6 @@ import com.zstu.exception.CRCException;
 import com.zstu.exception.NodeAttributeNotFoundException;
 import com.zstu.exception.ParsedException;
 import com.zstu.exception.ProtoNodeNotFoundException;
-import com.zstu.utils.BitUtils;
 import com.zstu.utils.ByteArrayUtils;
 import com.zstu.utils.CRCUtils;
 import org.jdom.Element;
@@ -39,9 +37,9 @@ public class Frame {
 
     public void parse(byte[] recvBytes, List<ParsedVar> parsedVars, boolean OESwap) throws ParsedException, CRCException {
         byte[] data = ByteArrayUtils.copySubArray(recvBytes, flag.length, -1);
-
+        //奇偶交换
         System.out.println("before swap: " + ByteArrayUtils.printAsHex(data));
-        data = Odd_EvenSwap(data, OESwap);
+        data = oddEvenSwap(data, OESwap);
         System.out.println("after swap: " + ByteArrayUtils.printAsHex(data));
 
         //计算CRC校验
@@ -52,18 +50,16 @@ public class Frame {
             int length = block.getLength();
             try {
                 byte[] blockBytes = ByteArrayUtils.copySubArray(data, offset, length);
-
+                //当前block是否需要进行crc校验
                 if (block.getShouldCheck()) {
                     crcCheckBytes = ByteArrayUtils.mergeBytes(crcCheckBytes, blockBytes);
                 }
-
-                if (block.getPass() != 1)
+                //当前block是否跳过解析
+                if (block.getPass() != 1) {
                     allFrameData = ByteArrayUtils.mergeBytes(allFrameData, blockBytes);
-
+                }
                 block.setBuffer(blockBytes);
-
                 block.parseData(parsedVars);
-
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println(block.getName() + "parse error");
                 System.out.println(block.getLength());
@@ -109,7 +105,7 @@ public class Frame {
         }
     }
 
-    private byte[] Odd_EvenSwap(byte[] data, boolean swap) {
+    private byte[] oddEvenSwap(byte[] data, boolean swap) {
         if (!swap) return data;
         if (data == null) return new byte[]{0};
         for (int i = 0; i < data.length; i += 2) {
