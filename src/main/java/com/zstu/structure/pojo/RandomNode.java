@@ -17,15 +17,15 @@ import org.jdom.Element;
  */
 public class RandomNode extends ParseableNode {
 
-    private List<SegNode> segs;
+    private final List<SegNode> segs;
     private byte lengthRange;
     private String lengthRangeUnit;
     private String lengthRangeEndian;
     private boolean end;
     private byte preBits;
     private byte[] reduceBytes;
-    private byte pass;
-    private String name;
+    private final byte pass;
+    private final String name;
 
     public RandomNode(Element randomElement, Block block) {
         super.nodeType = "random";
@@ -39,9 +39,9 @@ public class RandomNode extends ParseableNode {
 
         for (Element c : children) {
             String cName = c.getName();
-            if (cName.equals("length")) {
+            if ("length".equals(cName)) {
                 getLengthInfo(c);
-            } else if (cName.equals("seg")) {
+            } else if ("seg".equals(cName)) {
                 this.segs.add(new SegNode(c, this));
             }
         }

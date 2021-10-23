@@ -36,19 +36,19 @@ public class TimeNode extends ParseableNode {
      */
     @Override
     public int parse(byte[] buffer, int offset, List<ParsedVar> parsedVars) {
-        String time = "";
+        StringBuilder time = new StringBuilder();
         byte[] timeBytes = ByteArrayUtils.copySubArray(buffer, offset, length);
         ParsedVar var = new ParsedVar();
         int timeOffset = 0;
         for (SegNode timeSeg : timeSegs) {
             ParsedVar tVar = new ParsedVar();
             timeOffset = timeSeg.parse(timeBytes, timeOffset, tVar);
-            time += tVar.value;
-            time += "/";
+            time.append(tVar.value);
+            time.append("/");
         }
         var.valueName = "time";
         var.valueType = "time";
-        var.value = time;
+        var.value = time.toString();
         var.buffer = timeBytes;
         addBaseInfo(var);
         parsedVars.add(var);

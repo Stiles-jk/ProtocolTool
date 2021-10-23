@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8a67abb8-6655-4d01-9eb2-5aa8b7b685b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/Frame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/SegNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/SegNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/utils/BitUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/utils/BitUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/utils/BytesToPrimaryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/utils/BytesToPrimaryType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/FrameFlag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/FrameFlag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/LoopNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/LoopNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/RandomNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/RandomNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/TimeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zstu/structure/pojo/TimeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/parseTest/BitParseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/parseTest/BitParseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +84,7 @@
       <recent name="D:\IDEA_WorkSpace\ProtocolTool\src\main\java\com\zstu\byte_convert" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EndianTest">
+  <component name="RunManager" selected="Application.BitParseTest">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -98,12 +98,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BitTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.BitTest" />
+    <configuration name="BitParseTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parseTest.BitParseTest" />
       <module name="ProtocolTool" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.*" />
+          <option name="PATTERN" value="parseTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -111,8 +111,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ByteBufferTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ByteBufferTest" />
+    <configuration name="BitTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.BitTest" />
       <module name="ProtocolTool" />
       <extension name="coverage">
         <pattern>
@@ -165,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BitParseTest" />
         <item itemvalue="Application.EndianTest" />
         <item itemvalue="Application.BitTest" />
         <item itemvalue="Application.CRCUtils" />
         <item itemvalue="Application.ThreadTest" />
-        <item itemvalue="Application.ByteBufferTest" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +226,8 @@
       <workItem from="1625327018821" duration="632000" />
       <workItem from="1627451219270" duration="1030000" />
       <workItem from="1632827899588" duration="1893000" />
-      <workItem from="1634915764020" duration="2789000" />
+      <workItem from="1634915764020" duration="4571000" />
+      <workItem from="1635004531173" duration="355000" />
     </task>
     <servers />
   </component>

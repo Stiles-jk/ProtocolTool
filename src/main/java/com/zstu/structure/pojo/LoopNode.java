@@ -14,8 +14,8 @@ import java.util.List;
  */
 public class LoopNode extends ParseableNode {
 
-    private List<SegNode> loopSegs;
-    private int loopTime;
+    private final List<SegNode> loopSegs;
+    private final int loopTime;
 
     public LoopNode(Element loop,Block block) {
         super.nodeType = "loop";
@@ -26,7 +26,7 @@ public class LoopNode extends ParseableNode {
         super.blockName = block.name;
         List<Element> segs = loop.getChildren("seg");
         if (segs != null && segs.size() > 0) {
-            segs.stream().forEach(seg -> loopSegs.add(new SegNode(seg,this)));
+            segs.forEach(seg -> loopSegs.add(new SegNode(seg,this)));
         }
     }
 

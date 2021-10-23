@@ -14,8 +14,8 @@ import java.util.Arrays;
  */
 public class FrameFlag {
 
-    public byte[] starters = null;
-    public int length = 0;
+    public byte[] starters;
+    public int length;
 
     public FrameFlag(Element starter) throws NodeAttributeNotFoundException {
         String var = starter.getAttributeValue("var");
